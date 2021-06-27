@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<title></title>
+</head>
+<body>
+<link rel="stylesheet" href="jquery-ui.css">
+<script type="text/javascript" src="/webiopi.js"></script>
+<script src="jquery-3.3.1.min.js"></script>
+<script src="jquery-ui.js"></script>
+<script src="jquery.ui.touch-punch.min.js"></script>
+<script>
+<!--
+jQuery( function() {
+	jQuery( '#jquery-ui-slider1' ) . slider( {
+		orientation: 'vertical',
+		value: 90,
+		min: 0,
+		max: 180,
+		slide: function( event, ui ) {
+			jQuery( '#jquery-ui-slider-value1' ) . val( ui.value );
+			if(document.frm.sel[0].checked == true) {
+				webiopi().callMacro( "MoveServo", [2, 180-ui.value] );
+			} else {
+				webiopi().callMacro( "MoveServo", [3, 180-ui.value] );
+			}
+		}
+	} );
+	jQuery( '#jquery-ui-slider-value1' ) . val( jQuery( '#jquery-ui-slider1' ) . slider( 'value' ) );
+} );
+
+jQuery( function() {
+	jQuery( '#jquery-ui-slider2' ) . slider( {
+		value: 90,
+		min: 0,
+		max: 180,
+		slide: function( event, ui ) {
+			jQuery( '#jquery-ui-slider-value2' ) . val( ui.value );
+			if(document.frm.sel[0].checked == true) {
+				webiopi().callMacro( "MoveServo", [0, 180-ui.value] );
+			} else {
+				webiopi().callMacro( "MoveServo", [5, 180-ui.value] );
+			}
+		}
+	} );
+	jQuery( '#jquery-ui-slider-value2' ) . val( jQuery( '#jquery-ui-slider2' ) . slider( 'value' ) );
+} );
+
+jQuery( function() {
+	jQuery( '#jquery-ui-slider3' ) . slider( {
+		orientation: 'vertical',
+		value: 90,
+		min: 0,
+		max: 180,
+		slide: function( event, ui ) {
+			jQuery( '#jquery-ui-slider-value3' ) . val( ui.value );
+			if(document.frm.sel[0].checked == true) {
+				webiopi().callMacro( "MoveServo", [1, ui.value] );
+			} else {
+				webiopi().callMacro( "MoveServo", [4, ui.value] );
+			}
+		}
+	} );
+	jQuery( '#jquery-ui-slider-value3' ) . val( jQuery( '#jquery-ui-slider3' ) . slider( 'value' ) );
+} );
+
+// -->
+</script>
+<style>
+<!--
+#jquery-ui-slider-wrap1 {
+	text-align: center;
+	width: 60px;
+}
+#jquery-ui-slider-wrap2 {
+	text-align: center;
+	width: 270px;
+}
+#jquery-ui-slider-wrap3 {
+	text-align: center;
+	width: 60px;
+}
+#jquery-ui-slider-value1 {
+	border: 0;
+	width: 45px;
+	text-align: center;
+}
+#jquery-ui-slider-value2 {
+	border: 0;
+	width: 45px;
+	text-align: center;
+}
+#jquery-ui-slider-value3 {
+	border: 0;
+	width: 45px;
+	text-align: center;
+}
+#jquery-ui-slider1 {
+	margin: 15px auto;
+	height: 220px;
+}
+#jquery-ui-slider2 {
+	margin: 15px auto;
+	height: 15px;
+}
+#jquery-ui-slider3 {
+	margin: 15px auto;
+	height: 220px;
+}
+-->
+</style>
+<form name="frm">
+<table width="300px">
+<tr>
+<td align="center">ろぼ１</td><td align="center">ろぼ２</td>
+</tr>
+<tr>
+<td align="center"><input type="radio" name="sel" value="R1" checked></td>
+<td align="center"><input type="radio" name="sel" value="R2"></td>
+</tr>
+</table>
+<hr align="left" width="300px">
+<table width="300px">
+<tr>
+<td align="left">
+<div id="jquery-ui-slider-wrap1">
+	<input type="text" id="jquery-ui-slider-value1" />
+	<div id="jquery-ui-slider1"></div>
+</div>
+</td>
+<td align="right">
+<div id="jquery-ui-slider-wrap3">
+	<input type="text" id="jquery-ui-slider-value3" />
+	<div id="jquery-ui-slider3"></div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan="2" align="center">
+<div id="jquery-ui-slider-wrap2">
+	<div id="jquery-ui-slider2"></div>
+	<input type="text" id="jquery-ui-slider-value2" />
+</div>
+</td>
+</tr>
+</form>
+</table>
+</body>
+</html>
